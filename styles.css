@@ -101,7 +101,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-    max-width: 420px;
+    max-width: 500px;
 }
 
 .form > .input {
@@ -118,7 +118,7 @@ body {
 
 .form .input,
 .form .phone-input-wrapper {
-    width: 420px;
+    width: 500px;
     max-width: 100%;
 }
 
@@ -200,7 +200,7 @@ body {
     align-items: flex-start;
     gap: var(--gap-sm);
     cursor: pointer;
-    width: 420px;
+    width: 500px;
     max-width: 100%;
 }
 
@@ -307,12 +307,12 @@ body {
 }
 
 .gear-silver {
-    width: 115px;
+    width: 140px;
 }
 
 .advantages-section {
     grid-area: advantages;
-    padding: var(--gap-3xl) 56px 56px 40px;
+    padding: var(--gap-3xl) 56px 56px var(--gap-3xl);
     background: var(--color-advantages-bg);
 }
 
@@ -374,12 +374,22 @@ body {
         grid-template-areas: "form" "advantages";
     }
 
+    .gear-gold {
+        width: 250px;
+        margin-top: 40px;
+        margin-bottom: -150px;
+    }
+
+    .gear-silver {
+        width: 125px;
+    }
+
     .form-section {
-        padding: var(--gap-3xl) var(--gap-2xl) var(--gap-3xl);
+        padding: var(--gap-3xl) var(--gap-2xl) var(--gap-3xl) var(--gap-3xl);
     }
 
     .advantages-section {
-        padding: var(--gap-3xl) var(--gap-2xl) 76px;
+        padding: var(--gap-3xl) var(--gap-2xl) 76px var(--gap-3xl);
     }
 
     .form-title {
@@ -395,6 +405,17 @@ body {
     }
 
     .form {
+        max-width: 420px;
+    }
+
+    .form .input,
+    .form .phone-input-wrapper {
+        width: 420px;
+        max-width: 100%;
+    }
+
+    .checkbox-label {
+        width: 420px;
         max-width: 100%;
     }
 
