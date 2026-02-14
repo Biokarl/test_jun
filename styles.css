@@ -1,0 +1,561 @@
+:root {
+    --color-form-bg: #6A50BA;
+    --color-advantages-bg: #A689FF;
+    --color-orange: #FB9505;
+    --color-violet: #8267D8;
+    --color-white: #fff;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-placeholder: #bbb;
+    --color-border: #e0e0e0;
+    --color-bg-page: #f5f5f5;
+
+    --font-prosto: 'Prosto One', sans-serif;
+    --font-jost: 'Jost', sans-serif;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 40px;
+
+    --gap-xs: 8px;
+    --gap-sm: 12px;
+    --gap-md: 16px;
+    --gap-lg: 24px;
+    --gap-xl: 32px;
+    --gap-2xl: 40px;
+    --gap-3xl: 60px;
+
+    --input-height: 48px;
+    --btn-height: 48px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--color-bg-page);
+    overflow-x: hidden;
+}
+
+.component-wrapper {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--gap-lg);
+}
+
+.component {
+    width: 100%;
+    max-width: 1480px;
+    height: 488px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: 880px 600px;
+    grid-template-areas: "form advantages";
+    gap: 0;
+}
+
+.form-section {
+    grid-area: form;
+    padding: var(--gap-3xl) 56px 56px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-form-bg);
+    position: relative;
+    overflow: visible;
+}
+
+.form-title {
+    margin: 0 0 var(--gap-sm) 0;
+    font-family: var(--font-prosto);
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 44px;
+    color: var(--color-white);
+}
+
+.form-subtitle {
+    margin: 0 0 var(--gap-2xl) 0;
+    font-family: var(--font-jost);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--color-white);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 420px;
+}
+
+.form > .input {
+    margin-bottom: var(--gap-sm);
+}
+
+.form > .phone-input-wrapper {
+    margin-bottom: var(--gap-lg);
+}
+
+.form > .checkbox-label {
+    margin-bottom: var(--gap-lg);
+}
+
+.form .input,
+.form .phone-input-wrapper {
+    width: 420px;
+    max-width: 100%;
+}
+
+.input {
+    width: 100%;
+    height: var(--input-height);
+    padding: 16px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    background: var(--color-white);
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input::placeholder {
+    color: var(--color-placeholder);
+}
+
+.input:focus {
+    border-color: var(--color-orange);
+}
+
+.phone-input-wrapper {
+    display: flex;
+    height: var(--input-height);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    transition: border-color 0.2s;
+}
+
+.phone-input-wrapper:focus-within {
+    border-color: var(--color-orange);
+}
+
+.phone-prefix {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    padding: 0 var(--gap-sm);
+    background: var(--color-white);
+}
+
+.phone-code {
+    font-size: 16px;
+    line-height: 1;
+    color: var(--color-text);
+    transform: translateY(1px);
+}
+
+.flag {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+}
+
+.arrow {
+    width: 6px;
+    height: 4px;
+    color: var(--color-text-light);
+}
+
+.input-phone {
+    border: none;
+    flex: 1;
+    padding-left: 4px;
+}
+
+.input-phone:focus {
+    border: none;
+    outline: none;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap-sm);
+    cursor: pointer;
+    width: 420px;
+    max-width: 100%;
+}
+
+.checkbox-text {
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+    font-family: var(--font-jost);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-white);
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    border: 2px solid var(--color-white);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.checkbox:checked {
+    background: var(--color-orange);
+    border-color: var(--color-orange);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E");
+    background-size: 14px 14px;
+    background-position: center;
+}
+
+.buttons {
+    display: flex;
+    gap: var(--gap-md);
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-jost);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-white);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-orange {
+    width: 98px;
+    height: var(--btn-height);
+    background: var(--color-orange);
+}
+
+.btn-violet {
+    width: 210px;
+    height: var(--btn-height);
+    white-space: nowrap;
+    background: var(--color-violet);
+}
+
+.telegram-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.gears {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(calc(-50% - 25px));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0;
+}
+
+.gear {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.gear-gold {
+    width: 280px;
+    margin-top: 45px;
+    margin-bottom: -170px;
+}
+
+.gear-silver {
+    width: 115px;
+}
+
+.advantages-section {
+    grid-area: advantages;
+    padding: var(--gap-3xl) 56px 56px 40px;
+    background: var(--color-advantages-bg);
+}
+
+.advantages-title {
+    margin: 0 0 var(--gap-xl) 0;
+    font-family: var(--font-prosto);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 32px;
+    color: var(--color-white);
+}
+
+.advantages-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+}
+
+.advantage-item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+}
+
+.advantage-icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gap-sm);
+}
+
+.advantage-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.advantage-text {
+    font-family: var(--font-jost);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--color-white);
+}
+
+@media (max-width: 900px) {
+    .component {
+        max-width: 728px;
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: "form" "advantages";
+    }
+
+    .form-section {
+        padding: var(--gap-3xl) var(--gap-2xl) var(--gap-3xl);
+    }
+
+    .advantages-section {
+        padding: var(--gap-3xl) var(--gap-2xl) 76px;
+    }
+
+    .form-title {
+        font-size: 42px;
+        line-height: 44px;
+        margin-bottom: var(--gap-sm);
+    }
+
+    .form-subtitle {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: var(--gap-2xl);
+    }
+
+    .form {
+        max-width: 100%;
+    }
+
+    .form > .input {
+        margin-bottom: var(--gap-sm);
+    }
+
+    .form > .phone-input-wrapper {
+        margin-bottom: var(--gap-lg);
+    }
+
+    .form > .checkbox-label {
+        margin-bottom: var(--gap-lg);
+    }
+
+    .advantages-title {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: var(--gap-xl);
+    }
+
+    .advantages-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap-md) var(--gap-lg);
+    }
+
+    .advantage-item {
+        gap: 14px;
+    }
+
+    .advantage-text {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .checkbox-text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .component-wrapper {
+        padding: var(--gap-sm);
+    }
+
+    .component {
+        max-width: 340px;
+        width: 100%;
+    }
+
+    .form-section,
+    .advantages-section {
+        min-width: 0;
+    }
+
+    .form-section {
+        padding: var(--gap-2xl) var(--gap-md) var(--gap-2xl);
+    }
+
+    .advantages-section {
+        padding: var(--gap-2xl) var(--gap-md) var(--gap-2xl);
+    }
+
+    .form,
+    .form .input,
+    .form .phone-input-wrapper,
+    .checkbox-label {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .form-title {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: var(--gap-xs);
+    }
+
+    .form-subtitle {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: var(--gap-xl);
+    }
+
+    .form > .input {
+        margin-bottom: var(--gap-sm);
+    }
+
+    .form > .phone-input-wrapper {
+        margin-bottom: var(--gap-lg);
+    }
+
+    .form > .checkbox-label {
+        margin-bottom: var(--gap-lg);
+    }
+
+    .input {
+        padding: 14px var(--gap-md);
+        font-size: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: var(--gap-xs);
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+    .advantages-title {
+        font-size: 18px;
+        line-height: 32px;
+        margin-bottom: var(--gap-lg);
+    }
+
+    .advantages-list {
+        grid-template-columns: 1fr;
+        gap: var(--gap-md);
+    }
+
+    .advantage-item {
+        gap: var(--gap-sm);
+        min-width: 0;
+    }
+
+    .advantage-icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        padding: 10px;
+    }
+
+    .advantage-icon img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .advantage-text {
+        font-size: 16px;
+        line-height: 20px;
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+
+    .checkbox-text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .btn-orange,
+    .btn-violet {
+        width: 100%;
+        height: var(--btn-height);
+    }
+
+    .gears {
+        display: none;
+    }
+}
